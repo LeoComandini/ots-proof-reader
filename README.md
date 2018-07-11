@@ -9,7 +9,7 @@ Use this to read or verify timestamps locally through a GUI.
 
 Install the dependencies:
 ```
-pip3 install opentimenstamps
+pip3 install opentimestamps
 pip3 install pyqt5
 ```
 
