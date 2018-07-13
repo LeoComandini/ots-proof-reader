@@ -228,6 +228,7 @@ class DisplayProofWindow(QWidget):
             wa01 = QLabel("Bitcoin block " + str(best_attestation.height))
             wa01.setFixedWidth(column_width[0])
             wa01.setStatusTip("Best (oldest) attestation found in the timestamp")
+            wa01.setTextInteractionFlags(Qt.TextSelectableByMouse)
             grid_att.addWidget(wa01, 0, 1)
 
             wa10 = QLabel("Merkle root from ots: ")
@@ -492,6 +493,7 @@ class MainWindow(QMainWindow):
             "If you are not satisfied with those, search for block " + str(height) + " on another block explorer.")
         remind.setWordWrap(True)
         final.setWordWrap(True)
+        final.setTextInteractionFlags(Qt.TextSelectableByMouse)
 
         url_blockchaininfo = "https://blockchain.info/block-height/" + str(height)
         blockchaininfo = QLabel(" - <a href=\'" + url_blockchaininfo + "\'>blockchain.info</a>")
