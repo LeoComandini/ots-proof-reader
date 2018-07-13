@@ -223,6 +223,8 @@ class DisplayProofWindow(QWidget):
             wa00 = QLabel("Best attestation: ")
             wa00.setFixedWidth(column_width[0])
             wa00.setAlignment(Qt.AlignRight)
+            wa00.setStatusTip("A timestamp may contain multiple attestations, here only the best one is shown. "
+                              "See the others with 'Show information…'.")
             grid_att.addWidget(wa00, 0, 0)
 
             wa01 = QLabel("Bitcoin block " + str(best_attestation.height))
@@ -453,6 +455,8 @@ class MainWindow(QMainWindow):
         if self.detached_timestamp:
             dlg.setMinimumSize(950, 450)
 
+            ots_info_description = QLabel("Show timestamp in a human readable format.")
+
             hash_op_name = self.detached_timestamp.file_hash_op.TAG_NAME
             hash_value = self.detached_timestamp.timestamp.msg.hex()
             timestamp_tree = self.detached_timestamp.timestamp.str_tree()
@@ -465,6 +469,7 @@ class MainWindow(QMainWindow):
             text.setTextColor(Qt.white)
             text.setText("File " + hash_op_name + " hash: " + hash_value + "\nTimestamp:\n" + timestamp_tree)
 
+            vbox.addWidget(ots_info_description)
             vbox.addWidget(text)
         else:
             vbox.addWidget(QLabel("No proof detected."))
