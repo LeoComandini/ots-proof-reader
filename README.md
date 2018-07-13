@@ -29,4 +29,4 @@ See [LICENSE](LICENSE).
 ## Other licenses
 
 Icons used in the applications are by [Yusuke Kamiyaman](http://p.yusukekamiyamane.com/) and by the 
-[OpenTimestamp developers](https://github.com/opentimestamps/logo).
+[OpenTimestamps developers](https://github.com/opentimestamps/logo).
